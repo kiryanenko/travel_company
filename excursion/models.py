@@ -11,7 +11,7 @@ class Excursion(models.Model):
     cost = models.IntegerField()
 
 
-class ExcursionTour(models.Model)
+class ExcursionTour(models.Model):
     excursion = models.ForeignKey(Excursion, on_delete=models.CASCADE)
-    users = models.ManyToManyField(User, on_delete=models.CASCADE)
+    users = models.ManyToManyField(User)
     time = models.DateTimeField()

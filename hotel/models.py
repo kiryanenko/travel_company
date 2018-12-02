@@ -28,11 +28,11 @@ class Offer(models.Model):
     cost = models.IntegerField()
 
     created_at = models.DateTimeField(auto_now_add=True)
-    removed_at = models.DateTimeField(nusll=True)
+    removed_at = models.DateTimeField(null=True)
 
 
 class Tour(models.Model):
-    users = models.ManyToManyField(User, on_delete=models.CASCADE)
+    users = models.ManyToManyField(User)
     offer = models.ForeignKey(Offer, on_delete=models.CASCADE)
     arrival_date = models.DateField()
     departure_date = models.DateField()

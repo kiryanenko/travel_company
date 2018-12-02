@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
 
-# Create your views here.
+from resort.models import Resort
+from resort.serializers import ResortSerializer
+
+
+class ResortViewSet(viewsets.ModelViewSet):
+    queryset = Resort.objects.all()
+    serializer_class = ResortSerializer
